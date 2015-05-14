@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>flask</title>
+<h1>你好，请进入</h1>
+</head>
+<body>
+<p><a href="http://www.jetoublog.com" target="_blank" title="jetoublog">最cool博客</a>
+<form>
+	<label for="name">你的名字：</label>
+	<input type="text" value=" " name="name" />
+	<input type="submit" value="提交" name="submitBtn" />
+</form>
+{% block page_content %}
+<div class="page-header">
+	<h1>你好,{% if name %}{{ name }}{% else %}陌生人{% endif %}!</h1>
+</div>
+{{ wtf.quick_form(form) }}
+{% endblock %}
+</body>
+</html>
